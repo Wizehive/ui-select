@@ -304,7 +304,8 @@
     };
 
     ctrl.isActive = function(itemScope) {
-      return ctrl.open && ctrl.items.indexOf(itemScope[ctrl.itemProperty]) === ctrl.activeIndex;
+      var index = ctrl.items.indexOf(itemScope[ctrl.itemProperty]);
+      return ctrl.open && index === ctrl.activeIndex && index > -1;
     };
 
     ctrl.isDisabled = function(itemScope) {
